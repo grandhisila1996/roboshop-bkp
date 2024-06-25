@@ -7,10 +7,10 @@ Y="\e[33m"
 N="\e[0m"
 MONGDB_HOST=mongodb.daws76s.online
 
-TIMESTAMP=$(date +%F-%H-%M-%S)
+TIMESTAMP=$(date +%F:-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "script stareted executing at $TIMESTAMP" &>> $LOGFILE
+echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -58,7 +58,7 @@ unzip -o /tmp/web.zip &>> $LOGFILE
 
 VALIDATE $? "unzipping web"
  
-cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE 
+cp /home/centos/roboshop-bkp/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE 
 
 VALIDATE $? "copied roboshop reverse proxy config"
 
