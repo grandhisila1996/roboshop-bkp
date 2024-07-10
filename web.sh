@@ -62,7 +62,7 @@ sudo chmod 777 /etc/nginx/default.d/
 
 VALIDATE $? "providing writing Permission"
 
-cp /home/centos/roboshop-bkp/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
+cp ~/roboshop-bkp/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
 
 VALIDATE $? "copied roboshop reverse proxy config"
 
